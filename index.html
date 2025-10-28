@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STUFF.md</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', "Courier New", 'monospace'],
+            sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+          },
+          colors: {
+            'off-white': '#F8F8F8',
+            'off-black': '#1A1A1A',
+            'light-gray': '#CCCCCC',
+            'accent-black': '#000000',
+            'accent-red': '#ff0000',
+            'accent-yellow': '#FFFF00',
+            'accent-blue': '#E0F2FE',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+  .flash-delete-btn {
+    animation: flash-bg 150ms ease-out;
+  }
+  @keyframes flash-bg {
+    0% { background-color: #ff0000; color: #F8F8F8; }
+    100% { background-color: transparent; color: inherit; }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+      animation: fade-in 200ms ease-out forwards;
+  }
+  @keyframes blink-caret {
+    from, to { opacity: 1 }
+    50% { opacity: 0 }
+  }
+  .animate-blink-hard {
+      animation: blink-caret 800ms step-end infinite;
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "firebase/": "https://aistudiocdn.com/firebase@^12.4.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "yaml": "https://aistudiocdn.com/yaml@^2.8.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
+  }
+}
+</script>
+</head>
+<body class="bg-off-white font-mono text-off-black">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
